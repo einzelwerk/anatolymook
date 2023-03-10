@@ -1,0 +1,6 @@
+@use './mixins' as *;
+
+@include font-face(OpenSans, '../assets/fonts/OpenSans-Light', 300, normal, woff2 woff);
+@include font-face(OpenSans, '../assets/fonts/OpenSans-Regular', 400, normal, woff2 woff);
+@include font-face(Optima, '../assets/fonts/Optima', 400, normal, woff2 woff);
+@include font-face(Optima, '../assets/fonts/OptimaMedium', 500, normal, woff2 woff);

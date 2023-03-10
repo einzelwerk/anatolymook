@@ -1,0 +1,187 @@
+@use '../utils/mixins' as *;
+
+.modal-wrapper {
+  position: fixed;
+  z-index: 1060;
+  top: 0;
+  left: 0;
+
+  overflow: auto;
+  display: none;
+
+  width: 100%;
+  height: 100%;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.8;
+    background: #000;
+  }
+}
+
+.modal {
+  @include media(md) {
+    top: var(--gap);
+    bottom: 0;
+    transform: translateX(-50%);
+
+    overflow: auto;
+
+    width: calc(100% - var(--gap));
+    max-width: 100%;
+    padding: 16px;
+
+    border-radius: 0;
+  }
+
+  position: absolute;
+  z-index: 1060;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: auto;
+
+  width: 100%;
+  max-height: 90vh;
+  padding: 30px;
+
+  background: #fff;
+  border-radius: 16px;
+
+  &--thank-you {
+    @include media(md) {
+      top: auto;
+      width: 100%;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__title {
+    @include media(md) {
+      margin-bottom: 40px;
+      font-size: 40px;
+    }
+
+    margin-bottom: 60px;
+
+    font-family: Optima, sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    word-break: break-all;
+  }
+
+  &__desc {
+    &--center {
+      @include media(md) {
+        font-size: rem(18px);
+      }
+
+      font-size: rem(20px);
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    @include media(md) {
+      display: flex;
+    }
+  }
+
+  &__close {
+    @include media(md) {
+      position: static;
+      top: 12px;
+      right: 12px;
+    }
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+
+    border-radius: 12px;
+
+    &:hover {
+      background: #ebebeb;
+    }
+  }
+
+  &__form {
+    margin-top: 24px;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 28px;
+
+    font-size: rem(20px);
+    font-weight: 500;
+    text-align: center;
+
+    border-radius: 12px;
+  }
+
+  &__content {
+    max-width: 1200px;
+    font-family: Optima, sans-serif;
+    text-transform: uppercase;
+
+    h3 {
+      @include media(md) {
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      margin-bottom: 40px;
+      font-size: 48px;
+    }
+
+    h4 {
+      @include media(md) {
+        font-size: 24px;
+      }
+
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    h5 {
+      @include media(md) {
+        font-size: 20px;
+      }
+
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+
+      font-family: OpenSans, sans-serif;
+      line-height: 150%;
+      color: #868686;
+      text-transform: none;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+
+extends ../layouts/main
+
+block content
+  .hero
+    .hero__inner
+      picture.hero__background(role="presentation")
+        source(media="(max-width:768px)", srcset=require('@/images/hero-m.jpg'))
+        img(src=require('@/images/hero.jpg'), alt="")
+      .hero__content 
+        .hero__logo 
+          img(src=require('@/images/logo.svg'), alt="")
+        h1.hero__title coming soon
+        a.hero__btn(href="mailto:") Kontakt aufnehmen
+    .contacts
+      .contacts__table.container
+        .contacts__col
+          h2.contacts__title ÜBER ANATOLY
+          p.contacts__desc Anatoly ist ein inspirierender Trainer und leidenschaftlicher Bewusstseinslehrer. Als angesehener Experte für Ressourcengewinnung und die höchste Persönlichkeitsentwicklung führt er Menschen zu einer tiefgreifenden Veränderung von innen nach außen. Dies resultiert in einer Transformation auf ein höheres Niveau in der Verwirklichung des eigenen Seins und einer direkten Verbesserung der Lebensqualität.
+        .contacts__col
+          h2.contacts__title KONTAKT
+          .contacts__info 
+            .contacts__item 
+              h3.contacts__heading E-mail
+              a.contacts__value(href="mailto:mail@anatoly-mook.de") mail@anatoly-mook.de
+            .contacts__item 
+              h3.contacts__heading Mobil
+              a.contacts__value(href="tel:0177 248 19 20") 0177 248 19 20
+            .contacts__item 
+              h3.contacts__heading Festnetz
+              a.contacts__value(href="tel:") 02303-3340628
+      nav.nav.container 
+        ul.nav__list 
+          button.nav__item(data-modal="impressum") Impressum
+          button.nav__item(data-modal="datenschutz") Datenschutz
+
